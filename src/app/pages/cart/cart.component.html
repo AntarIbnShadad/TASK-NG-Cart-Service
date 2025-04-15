@@ -1,3 +1,10 @@
 <div class="cart-container">
   <h2>Your Cart 🛒</h2>
+  <div class="product-list">
+  @for(item of currentCart; track item.product){
+    <app-product-card [inCart] = "true" [product] = "item.product"
+    [amount] = "item.amount"></app-product-card>
+  }
+
+</div>
 </div>

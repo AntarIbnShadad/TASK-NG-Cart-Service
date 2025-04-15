@@ -11,7 +11,14 @@
   <p class="out-of-stock">Out of Stock</p>
   }
   <div class="actions">
-    <button>Add to Cart</button>
+    @if(!inCart){
+      <button (click)="addToCart()">Add to Cart</button>
+    }
+    @if(inCart){
+      <button>-</button>
+      <h3>{{amount}}</h3>
+      <button>+</button>
+    }
     <button [routerLink]="['/products', product.id]">View Product</button>
   </div>
 </div>
