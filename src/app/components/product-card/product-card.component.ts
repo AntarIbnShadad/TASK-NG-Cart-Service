@@ -27,4 +27,14 @@ export class ProductCardComponent {
   receivePage($event: boolean) {
     this.inCart = $event;
   }
+
+  decreaseAmount(){
+    this._cartService.decreaseProductAmount(this.product)
+  }
+  increaseAmount(){
+    this._cartService.increseProductAmount(this.product)
+  }
+  deleteFromCart(){
+    this._cartService.deleteFromCart(this.product)
+  }
 }

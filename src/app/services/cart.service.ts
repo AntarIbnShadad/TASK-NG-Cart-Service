@@ -26,6 +26,28 @@ export class CartService {
     }
   }
 
+  increseProductAmount(product:Product){
+    const item = this.cart.find(x => x.product === product)
+    if(item){
+      item.amount += 1 
+    }
+  }
+  decreaseProductAmount(product:Product){
+    const item = this.cart.find(x => x.product === product)
+    if(item){
+      item.amount -= 1 
+      if(item.amount===0){
+        this.cart.splice(this.cart.indexOf(item),1) 
+      }
+    }
+  }
+  deleteFromCart(product:Product){
+    const item = this.cart.find(x => x.product === product)
+    if(item){
+      this.cart.splice(this.cart.indexOf(item),1) 
+    }
+  }
+
   getCart(){
     return this.cart
   }
