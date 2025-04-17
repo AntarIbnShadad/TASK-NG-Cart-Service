@@ -17,14 +17,15 @@ export class CartComponent {
  
 
   constructor(private _cartSevice:CartService){
-      this.currentCart = this._cartSevice.getCart()
+      this.currentCart = this._cartSevice.signalCart()
 
   }
+  
   getTotalPrice(): number{
     //let filtered: number[] = []
     ///this._cartSevice.getCart().forEach(a => filtered.push(a.product.price+a.amount))
     //console.log(filtered)
-    let price:number = this._cartSevice.getCart().reduce((sum, current) => sum + (current.product.price*current.amount), 0 ) 
+    let price:number = this._cartSevice.signalCart().reduce((sum, current) => sum + (current.product.price*current.amount), 0 ) 
     //let price = filtered.reduce((sum, price) => sum + price, 0)
     
     console.log(price)

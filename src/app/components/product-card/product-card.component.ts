@@ -19,8 +19,8 @@ export class ProductCardComponent {
   constructor(private _cartService: CartService){}
 
   addToCart(){
-   this._cartService.addToCart(this.product)
-   console.log(this._cartService.getCart())
+   this._cartService.addToSignal(this.product)
+   console.log(this._cartService.signalCart())
   }
  
 
@@ -29,12 +29,12 @@ export class ProductCardComponent {
   }
 
   decreaseAmount(){
-    this._cartService.decreaseProductAmount(this.product)
+    this._cartService.decreaseSignal(this.product)
   }
   increaseAmount(){
-    this._cartService.increseProductAmount(this.product)
+    this._cartService.incraseSignal(this.product)
   }
   deleteFromCart(){
-    this._cartService.deleteFromCart(this.product)
+    this._cartService.deleteSignal(this.product)
   }
 }
