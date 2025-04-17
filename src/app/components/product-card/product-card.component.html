@@ -16,7 +16,7 @@
     }
     @if(inCart){
       <button (click) = "decreaseAmount()">-</button>
-      <h3>{{}}</h3>
+      <h3>{{amount}}</h3>
       <button (click) = "increaseAmount()">+</button>
       <button (click) = "deleteFromCart()">Delete From Cart</button>
     }
